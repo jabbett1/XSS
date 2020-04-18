@@ -242,3 +242,9 @@ has been HTML-encoded: <img onerror=eval('al&#x5c;u0065rt(1)') src=a>
  keywords or other syntax such as quotes, periods, and brackets.
 Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12489-12499). Wiley. Kindle Edition. 
 
+So if <script> is being stripped from your input, you should try the following to check whether all instances are being 
+removed: <script><script>alert(1)</script>
+ In this situation, you should also check whether the sanitization is being performed recursively:
+ <scr<script>ipt>alert(1)</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12568-12575). Wiley. Kindle Edition. 
+
