@@ -1,3 +1,9 @@
+Kim, Peter. The Hacker Playbook 3: Practical Guide To Penetration Testing (p. 54). Secure Planet. Kindle Edition. 
+
+Two good resources to help you start crafting obfuscated XSS payload attacks: 
+  https://github.com/foospidy/payloads/tree/master/other/xss  
+  https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
+
 https://raw.githubusercontent.com/cyberspacekittens/XSS/master/XSS2.png
 https://html5sec.org/
 https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot
