@@ -6,8 +6,16 @@ Two good resources to help you start crafting obfuscated XSS payload attacks:
 
 https://raw.githubusercontent.com/cyberspacekittens/XSS/master/XSS2.png
 https://html5sec.org/
-https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot
 
 Other Scripts to Enable Key Loggers, Take Pictures, and More  http://www.xss-payloads.com/payloads-list.html?c#category=capture
 
+Mind Map made by @jackmasa.  This is a great document that breaks down different XSS payloads based on where your input is served.
+  https://raw.githubusercontent.com/cyberspacekittens/XSS/master/XSS2.png
+
+Discusses which browsers are vulnerable to which XSS payloads is:  https://html5sec.org/.
+
+Kim, Peter. The Hacker Playbook 3: Practical Guide To Penetration Testing (p. 55). Secure Planet. Kindle Edition. 
+
+Polyglot XSSs here: https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot
+Kim, Peter. The Hacker Playbook 3: Practical Guide To Penetration Testing (p. 56). Secure Planet. Kindle Edition. 
 
