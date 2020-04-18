@@ -1,0 +1,19 @@
+Using VBScript Although common examples of XSS exploits typically focus on JavaScript, on Internet Explorer you also
+can use the VBScript language. It has different syntax and other properties that you may be able to leverage to 
+bypass many input filters that were designed with only JavaScript in mind. You can introduce VBScript code in 
+various ways: <script language=vbs>MsgBox 1</script>
+<img onerror="vbs:MsgBox 1" src=a>
+<img onerror=MsgBox+1 language=vbs src=a>
+ In all cases, you can use vbscript instead of vbs to specify the language. In the last
+example, note the use of MsgBox+1 to avoid the use of whitespace, thereby avoiding the need for quotes around the 
+attribute value. This works because +1 effectively adds the number 1 to nothing, so the expression evaluates to 1,
+which is passed to the MsgBox function. It is noteworthy that in VBScript, some functions can be called without brackets, 
+as shown in the preceding examples. This may allow you to bypass some filters that assume that script code must employ brackets 
+to access any functions. Furthermore, unlike JavaScript, the VBScript language is not case-sensitive, so you can use upper 
+and lowercase characters in all keywords and function names. This behavior is most useful when the application function you 
+are attacking modifies the case of your input, such as by converting it to uppercase. Although this may have been done for 
+reasons of functionality rather than security, it may frustrate XSS exploits using JavaScript code, which fails to execute 
+when converted to uppercase. In contrast, exploits using VBScript still work: <SCRIPT LANGUAGE=VBS>MSGBOX 1</SCRIPT>
+<IMG ONERROR="VBS:MSGBOX 1" SRC=A>
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12508-12520). Wiley. Kindle Edition. 
