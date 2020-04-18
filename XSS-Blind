@@ -1,0 +1,18 @@
+For example, let's assume an application has a "contact us" page that allows a user to supply contact information to t
+he administrator in order to be contacted later.  Since the results of that data are only viewable by an administrator 
+manually and not the requesting user and if the application was vulnerable to XSS, then the attacker would not immediately 
+see their "alert(1)" attack.  In these cases, we can use XSSHunter (https://xsshunter.com) to help us validate the Blind XSS.
+
+How XSSHunter works is that when our JavaScript payload executes, it will take a screenshot of the victim's screen 
+(the current page they are viewing) and send that data back to the XSSHunter's site.  When this happens, XSSHunter will 
+send an alert that our payload executed and provide us with all the detailed information.  We can now go back to create a 
+very malicious payload and replay our attack. XSS Hunter: 
+
+  Disable any Proxies (i.e. Burp Suite)
+  Create account at https://xsshunter.com  
+  Login at https://xsshunter.com/app  
+  Go to Payloads to get your Payload  
+  Modify the payload to fit your attack or build a Polyglot with it  
+  Check XSS hunter to see the payload execution
+
+Kim, Peter. The Hacker Playbook 3: Practical Guide To Penetration Testing (p. 59). Secure Planet. Kindle Edition. 
