@@ -1,0 +1,35 @@
+1. Having submitted a unique string to every possible location within the application, you must review all of the application's 
+content and functionality once more to identify any instances where this string is displayed back to the browser. 
+User-controllable data entered in one location (for example, a name field on a personal information page) may be 
+displayed in numerous places throughout the application. (For example, it could be on the user's home page, in a
+listing of registered users, in work flow items such as tasks, on other users' contact lists, in messages or questions 
+posted by the user, or in application logs.) Each appearance of the string may be subject to different protective
+filters and therefore needs to be investigated separately. 
+
+2. If possible, all areas of the application accessible by 
+administrators should be reviewed to identify the appearance of any data controllable by non-administrative users. For 
+example, the application may allow administrators to review log files in-browser. It is extremely common for this type of 
+functionality to contain XSS vulnerabilities that an attacker can exploit by generating log entries containing malicious 
+HTML. 
+
+3. When submitting a test string to each location within the application, it is sometimes insufficient simply to post 
+it as each parameter to each page. Many application functions need to be followed through several stages before the submitted 
+data is actually stored. For example, actions such as registering a new user, placing a shopping order, and making a funds 
+transfer often involve submitting several different requests in a defined sequence. To avoid missing any vulnerabilities, it is 
+necessary to see each test case through to completion. 
+
+4. When probing for reflected XSS, you are interested in every aspect of
+a victim's request that you can control. This includes all parameters to the request, every HTTP header, and so on. In the case
+of stored XSS, you should also investigate any out-of-band channels through which the application receives and processes input 
+you can control. Any such channels are suitable attack vectors for introducing stored XSS attacks. Review the results of your 
+application mapping exercises (see Chapter 4) to identify every possible area of attack surface. 
+
+5. If the application allows files to be uploaded and downloaded, always probe this functionality for stored XSS attacks.
+Detailed techniques for testing this type of functionality are discussed later in this chapter. 
+
+6. Think imaginatively about any other possible means by which data you control may be stored by the application and 
+displayed to other users. For example, if the application search function shows a list of popular search items, you may be
+able to introduce a stored XSS payload by searching for it numerous times, even though the primary search functionality
+itself handles your input safely.
+
+Stuttard, Dafydd. The Web Application Hacker's Handbook (Kindle Locations 12982-13003). Wiley. Kindle Edition. 
